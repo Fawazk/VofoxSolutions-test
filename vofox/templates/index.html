@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="mainbody d-flex aligns-items-center">
-    <div class="dropdown">
+<div class="mainbody ">
+    <div class="dropdown" style="padding: 5%;">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Dropdown button
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Other</a></li>
+            <li><a class="dropdown-item" href="{% url 'addproduct' %}">Other</a></li>
         {% if products %}
         {% for x in products %}
-          <li><a class="dropdown-item" href="#">{x.ProductName}</a></li>
+          <li><a class="dropdown-item" href="{% url 'productdetails' %}?id={{x.id}}">{{x.ProductName}}</a></li>
           {% endfor %}
         {% endif %}
         </ul>
       </div>
 </div>
-
 {% endblock %}

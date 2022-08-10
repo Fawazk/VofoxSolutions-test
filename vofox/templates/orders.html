@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<table id="example" class="table table-striped" style="width:80%;">
+    <thead>
+        <tr>
+            
+            <th>Product Id</th>
+            <th>Quantity</th>
+            <th>CustomerName</th>
+            <th>CustomerEmail</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            {%if orders%}
+            {% for i in orders %}
+            <td>{{i.ProductId}}</td>
+            <td>{{i.Quantity}}</td>
+            <td>{{i.CustomerName}}</td>
+            <td>{{i.CustomerEmail}}</td>
+            {% endfor %}
+            {% endif %}
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}

@@ -5,12 +5,11 @@ from django.db import models
 class ProductTable(models.Model):
     ProductName = models.CharField(max_length=50) 
     ProductDesctiption = models.TextField()
-    PRICE = models.IntegerField(null=True)
+    PRICE = models.IntegerField(null=True,blank=True)
     # STATUS = models.IntegerField
 
     def __str__(self):
         return self.ProductName
-
 
 class Columns(models.Model):
     ProductId = models.ForeignKey(ProductTable,on_delete=models.CASCADE)
