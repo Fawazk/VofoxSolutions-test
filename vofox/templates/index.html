@@ -7,9 +7,12 @@
           Dropdown button
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Other</a></li>
+        {% if products %}
+        {% for x in products %}
+          <li><a class="dropdown-item" href="#">{x.ProductName}</a></li>
+          {% endfor %}
+        {% endif %}
         </ul>
       </div>
 </div>
